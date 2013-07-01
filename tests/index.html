@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tests</title>
+    <meta charset="utf8" />
+    <script type="text/javascript" src="../ajsut.js"></script>
+    <link type="text/css" rel="stylesheet" href="../style/ajsut.css" />
+  </head>
+  <body>
+
+    <script>
+
+      (function() {
+        var myvar = 1;
+        ajsut.assert(myvar && myvar === 1, 'myvar is defined inside the single execution function and equal to integer 1');
+      })()
+
+
+      ajsut.test('async 1', function() {
+        ajsut.pause();
+        setTimeout(function() {
+          ajsut.assert(this === window , 'the context here is the window object');
+          ajsut.assert(typeof myvar != 'undefined', 'myvar is defined inside the timeout callback, outside the single execution function');
+          ajsut.resume();
+        }, 1000)
+      })
+
+      ajsut.test('Testing the window object', function() {
+        ajsut.assert(window, 'window is defined');
+        ajsut.assert(typeof window == 'object', 'window is an object')
+      })
+
+      ajsut.performance('test performance', function() {
+        var d = document.createElement('div');
+        return d;
+      }, 100000);
+      
+      /*
+      ajsut.meanPerformance('test performance', function() {
+        c = 1 + 2;
+        d = c;
+        e = new Date();
+        for(var i = 0; i<100; i++) {
+          var ii = 0;
+        }
+        return e;
+      }, 100000);
+      */
+
+    </script>
+
+  </body>
+</html>
