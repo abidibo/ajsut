@@ -18,7 +18,7 @@
         ajsut.resume();
       }
     }
-  }
+  };
 
   var performance = function(fn, max_cnt) {
     var start = new Date().getTime();
@@ -26,23 +26,24 @@
       fn();
     }
     return new Date().getTime() - start;
-  }
+  };
 
-  average = function(a) {
+  var average = function(a) {
     var r = {mean: 0, variance: 0, deviation: 0}, t = a.length;
     for(var m, s = 0, l = t; l--; s += a[l]);
     for(m = r.mean = s / t, l = t, s = 0; l--; s += Math.pow(a[l] - m, 2));
     return r.deviation = Math.sqrt(r.variance = s / t), r;
-  }
+  };
 
   ajsut.pause = function() {
     paused = true;
-  }
+  };
 
   ajsut.resume = function() {
     paused = false;
+    results = undefined;
     setTimeout(run_test, 1);
-  }
+  };
 
   ajsut.assert = function(value, desc) {
     var li = document.createElement('li');
@@ -70,7 +71,7 @@
     ajsut.test(name, function() {
       ajsut.assert(true, 'performance measured time: ' + elapsed);
     });
-  }
+  };
 
   ajsut.meanPerformance = function(name, fn, max_cnt, set_num) {
     max_cnt = max_cnt || 10000;
@@ -86,6 +87,6 @@
       ajsut.assert(true, 'performance measured time: ' + x.mean + ' ' + String.fromCharCode(177) + ' ' + x.deviation);
     });
 
-  }
+  };
 
 })()
