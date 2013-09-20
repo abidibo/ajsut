@@ -14,6 +14,8 @@ Provided tests:
 Usage
 --------------------------------
 
+Notice! Do not use async group test with assertions, because assertions (assert) are not queued, use tests instead.
+
 Include the provided js and styles
 
 ```html

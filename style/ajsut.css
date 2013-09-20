@@ -23,19 +23,19 @@
   background: #82ffca;
 }
 
-.passed {
+li.passed {
 }
-.passed:before {
+li.passed:before {
   content: '[OK]';
   display: block;
   float: right;
   color: #626200;
 }
 
-.failed {
+li.failed {
   color: #cc0000;
 }
-.failed:before {
+li.failed:before {
   content: '[failed]';
   display: block;
   float: right;
