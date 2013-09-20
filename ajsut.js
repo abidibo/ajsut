@@ -1,3 +1,13 @@
+/**
+ * ajsut, abidibo's unit testing javascript library
+ * @author abidibo <abidibo@gmail.com> <dev@abidibo.net>
+ * @repository http://github.com/abidibo/ajsut
+ * @license MIT license (http://opensource.org/licenses/MIT)
+ *
+ * How to use
+ * ----------
+ * See the README.md file in the repository
+ */
 (function() {
 
   var ajsut = window.ajsut = {};
