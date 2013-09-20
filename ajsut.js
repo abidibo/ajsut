@@ -3,6 +3,7 @@
  * @author abidibo <abidibo@gmail.com> <dev@abidibo.net>
  * @repository http://github.com/abidibo/ajsut
  * @license MIT license (http://opensource.org/licenses/MIT)
+ * @version 0.1
  *
  * How to use
  * ----------
